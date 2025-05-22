@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Facebook Објаве</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    iframe {
+      width: 500px;
+      height: 645px;
+      border: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Facebook Објаве</h1>
+  <div id="fb-container">
+    <iframe id="fb-frame" 
+      src="https://www.facebook.com/plugins/post.php?href=URL_OBЈАВЕ_1&show_text=true&width=500" 
+      allowfullscreen="true"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+    </iframe>
+  </div>
+
+  <script>
+    const links = [
+      "https://www.facebook.com/share/p/16KFghmdyr/",
+      "https://www.facebook.com/share/p/1CDBTsevP2/",
+      "https://www.facebook.com/share/p/1DySZ3LjBs/",
+      "https://www.facebook.com/share/p/16BqTwX9qG/"
+      // Додај више линкова по потреби
+    ];
+
+    let i = 0;
+    const frame = document.getElementById("fb-frame");
+
+    setInterval(() => {
+      i = (i + 1) % links.length;
+      frame.src = `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(links[i])}&show_text=true&width=500`;
+    }, 8000); // Мења сваких 8 секунди
+  </script>
+</body>
+</html>
