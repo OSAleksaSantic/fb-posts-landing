@@ -2,47 +2,19 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
-  <title>Facebook Објаве</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-    iframe {
-      width: 500px;
-      height: 645px;
-      border: none;
-      overflow: hidden;
-    }
-  </style>
+  <title>Шта смо ми то све радили ове године</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Facebook Објаве</h1>
-  <div id="fb-container">
-    <iframe id="fb-frame" 
-      src="https://www.facebook.com/plugins/post.php?href=URL_OBЈАВЕ_1&show_text=true&width=500" 
-      allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-    </iframe>
+  <h1>Шта смо ми то све радили ове године</h1>
+  <div class="slideshow-container">
+    <img class="mySlides" src="images/slika1.jpg" alt="Slika 1">
+    <img class="mySlides" src="images/slika2.jpg" alt="Slika 2">
+    <img class="mySlides" src="images/slika3.jpg" alt="Slika 3">
+    <img class="mySlides" src="images/slika4.jpg" alt="Slika 4">
+    <img class="mySlides" src="images/slika5.jpg" alt="Slika 5">
   </div>
-
-  <script>
-    const links = [
-      "https://www.facebook.com/share/p/16KFghmdyr/",
-      "https://www.facebook.com/share/p/1CDBTsevP2/",
-      "https://www.facebook.com/share/p/1DySZ3LjBs/",
-      "https://www.facebook.com/share/p/16BqTwX9qG/"
-      // Додај више линкова по потреби
-    ];
-
-    let i = 0;
-    const frame = document.getElementById("fb-frame");
-
-    setInterval(() => {
-      i = (i + 1) % links.length;
-      frame.src = `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(links[i])}&show_text=true&width=500`;
-    }, 8000); // Мења сваких 8 секунди
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
